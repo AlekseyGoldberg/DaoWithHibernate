@@ -12,9 +12,9 @@ public class MyRepository {
     @PersistenceContext
     private EntityManager entityManager;
 
-    public List getPersonByCity(String city){
-        Query query=entityManager.createQuery("select p from Person p where p.cityOfLiving=:name");
-        query.setParameter("name",city);
+    public List getProductByName(String name){
+        Query query=entityManager.createQuery("select o.productName from Orders o join Customers c on o.customer.id=c.id where lower( c.name)=:name");
+        query.setParameter("name",name.toLowerCase());
         return query.getResultList();
     }
 

@@ -13,7 +13,7 @@ public class MyService {
         this.repository=repository;
     }
 
-    public List getPersonByCity(String city){
-        return repository.getPersonByCity(city);
+    public List getProductByName(String name){
+        return repository.getProductByName(name);
     }
 }

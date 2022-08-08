@@ -15,8 +15,8 @@ public class MyController {
         this.service=service;
     }
 
-    @GetMapping("/persons/by-city")
-    public List getPersonsByCity(@RequestParam String city){
-        return service.getPersonByCity(city);
+    @GetMapping("/products/fetch-product")
+    public List getProductByName(@RequestParam String name){
+        return service.getProductByName(name);
     }
 }

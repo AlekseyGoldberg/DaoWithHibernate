@@ -4,25 +4,27 @@ import lombok.*;
 
 import javax.persistence.*;
 
+@Entity
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
 @ToString
-@Builder
-@AllArgsConstructor
-@NoArgsConstructor
-@Entity
-public class Person {
+public class Customers {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @Column(nullable = false)
     private String name;
+
     @Column(nullable = false)
     private String surname;
+
     @Column
     int age;
+
     @Column
-    Long numberPhone;
-    @Column
-    String cityOfLiving;
+    Long phoneNumber;
 }
